@@ -6,9 +6,6 @@ import AttackPage from './components/pages/attack/AttackPage'
 import DefensivePage from './components/pages/defense/DefensivePage'
 
 export default function App() {
-
-
-  
   return (
     <div>
       <Routes>
@@ -20,4 +17,4 @@ export default function App() {
       </Routes>
     </div>
   )
-}
+}   
