@@ -39,10 +39,6 @@ const handelShowArea = (select:string)=>{
     setselectionArea(false)
   }
 }
-
-  
-  
-
   return <div className='register'>
   <div className='register-form'>
     <h2>Register</h2>
@@ -68,11 +64,9 @@ const handelShowArea = (select:string)=>{
         <option value="IDF - North">IDF - North</option>
         <option value="IDF - South">IDF - South</option>
         <option value="IDF - Center">IDF - Center</option>
-        <option value="IDF - West Bank">IDF - West Bank</option>
-        
+        <option value="IDF - West Bank">IDF - West Bank</option>  
     </select>
     }
-    
     <button onClick={handleRegister}>Register</button>
     <p>You already have an account ? <a onClick={() => navigate("/login")}className="login-link">Connect</a></p>
     </div>
