@@ -14,7 +14,6 @@ export default function Register() {
   const [selectionArea, setselectionArea] = useState(false);
   const navigate = useNavigate();
 
-  
   useEffect(() => {
     if (user?._id) {
       navigate("/login");
