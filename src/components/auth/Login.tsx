@@ -36,8 +36,8 @@ export default function Login() {
         placeholder='Password' 
         value={password} 
         onChange={(e)=>setPassword(e.target.value)}/>
-        <button onClick={()=>{  dispatch(fetchLogin({username,password})), console.log("llll");
-        }}>Login</button>
+        <button onClick={()=>{  dispatch(fetchLogin({username,password}))}}>Login</button>
+        <p>You don't  have an account ? <a onClick={() => navigate("/register")}className="register-link">Connect</a></p>
         </div>
     </div>
   )
