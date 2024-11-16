@@ -9,29 +9,37 @@ export default function Register() {
   const { user } = useAppSelector((state) => state.user);
   const [username,setUserName] = useState("")
   const [password,setPassword] = useState("")
-  const [location,setLocation] = useState("jhjh")
+  const [location,setLocation] = useState("")
   const [organition,setOrgantion] = useState("")
+  const [selectionArea, setselectionArea] = useState(false);
   const navigate = useNavigate();
 
+  
   useEffect(() => {
     if (user?._id) {
       navigate("/login");
     }
-  }, []);
-//   useEffect(() => {
-//     if (user?._id) {
-//       navigate("/login");
-//     }
-//   }, [user,password]);
+  }, [user]);
+
   const handleRegister  = async()=>{
     console.log("879");
-    
-    await dispatch(fetchRegister({username,password,organition,location}))
+    const register = await dispatch(fetchRegister({username,password,organition,location}))
     console.log("100");
-    
+    if (register.payload && register.payload._id){
     navigate("/login")
-
+  }else{
+    alert("All fields are required")
   }
+  }
+
+const handelShowArea = (select:string)=>{
+  setOrgantion(select)
+  if (select == "IDF") {
+    setselectionArea(true)
+  }else{
+    setselectionArea(false)
+  }
+}
 
   
   
@@ -47,25 +55,27 @@ export default function Register() {
     placeholder='Password' 
     value={password} 
     onChange={(e)=>setPassword(e.target.value)}/>
-    <select value={organition} onChange={(e)=>setOrgantion(e.target.value)}>
+    <select value={organition} onChange={(e)=>handelShowArea(e.target.value)}>
         <option value=""  disabled hidden>Choose Organation</option>
-        <option value="IDF - North">IDF - North</option>
-        <option value="IDF - South">IDF - South</option>
-        <option value="IDF - Center">IDF - Center</option>
-        <option value="IDF - West Bank">IDF - West Bank</option>
-        <option value="5">Five</option>
-    </select>
-    <select value={location} onChange={(e)=>setLocation(e.target.value)}>
-        <option value=""  disabled hidden>Choose area</option>
-        <option value="IDF">IDF - North</option>
+        <option value="IDF">IDF</option>
         <option value="Hezbollah">Hezbollah</option>
         <option value="Hamas">Hamas</option>
         <option value="IRGC">IRGC</option>
         <option value="Houthis">Houthis</option>
     </select>
-    
+    {selectionArea&&
+    <select value={location} onChange={(e)=>setLocation(e.target.value)}>
+        <option value=""  disabled hidden>Choose area</option>
+        <option value="IDF - North">IDF - North</option>
+        <option value="IDF - South">IDF - South</option>
+        <option value="IDF - Center">IDF - Center</option>
+        <option value="IDF - West Bank">IDF - West Bank</option>
+        
+    </select>
+    }
     
     <button onClick={handleRegister}>Register</button>
+    <p>You already have an account ? <a onClick={() => navigate("/login")}className="login-link">Connect</a></p>
     </div>
 </div>
 }
