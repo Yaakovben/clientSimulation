@@ -22,9 +22,7 @@ export default function Login() {
         navigate('/atteck')
       }
     },[])
-    
   return (
-
     <div className='login'>
       <div className='login-form'>
         <h3>Login</h3>

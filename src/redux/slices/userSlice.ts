@@ -13,7 +13,7 @@ const initialState: userState = {
     'user/login',
     async (user : {username: string, password: string}, thunkApi) => {
         try {
-            const res = await fetch("http://localhost:8224/api/users/login", {
+            const res = await fetch("http://localhost:8201/api/users/login", {
                 method: "post",
                 headers: {
                     'Content-Type': 'application/json'
@@ -37,7 +37,7 @@ export const fetchRegister = createAsyncThunk(
     'user/register',
     async (user : {username: string, password: string, organition:string,location:string}, thunkApi) => {
         try {
-            const res = await fetch("http://localhost:8224/api/users/register", {
+            const res = await fetch("http://localhost:8201/api/users/register", {
                 method: "post",
                 headers: {
                     'Content-Type': 'application/json'

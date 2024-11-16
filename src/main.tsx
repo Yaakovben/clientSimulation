@@ -5,6 +5,13 @@ import App from './App.tsx'
 import { BrowserRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import store from './redux/store.ts'
+//Socket
+import { io } from 'socket.io-client'
+
+
+
+//Socket
+export const socket = io('http://localhost:8201')
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
