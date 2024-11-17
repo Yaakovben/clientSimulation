@@ -13,7 +13,7 @@ export default function AttackFire() {
       navigate('/login')
     } 
   },[user])
-  
+  useEffect(()=>{},[area])
   if(user && user.ammuntion.length >0 ){
     const handel = (missileName:string,locationMissile:string,userName:string)=>{
       socket.emit("attackFire",missileName,locationMissile,userName)
@@ -29,8 +29,7 @@ export default function AttackFire() {
         <option value="IDF - Center">Center</option>
         <option value="IDF - West Bank">West Bank</option>  
     </select>
-
-      {user?.ammuntion.map((ammuntion:IAmmuntion, index:number)=><p key={index} onClick={handel(ammuntion.name,area,user.username)!}>{ammuntion.name}:{ammuntion.amount}</p>)} 
+      {user?.ammuntion.map((ammuntion:IAmmuntion, index:number)=><p key={index} onClick={()=>handel(ammuntion.name,area,user.username)!}>{ammuntion.name} ✖️ {ammuntion.amount}</p>)} 
       </div>
     </div>
   )}
