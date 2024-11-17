@@ -13,8 +13,11 @@ export default function Login() {
 
     useEffect(()=>{
       if(!user?._id ) return
-      navigate('/atteck')
-
+      if (user.organition=="IDF - South") {
+        navigate("/defense")
+      }else{
+        navigate("/atteck")
+      }
     },[user])
 
     useEffect(()=>{
@@ -35,7 +38,7 @@ export default function Login() {
         value={password} 
         onChange={(e)=>setPassword(e.target.value)}/>
         <button onClick={()=>{  dispatch(fetchLogin({username,password}))}}>Login</button>
-        <p>You don't  have an account ? <a onClick={() => navigate("/register")}className="register-link">Connect</a></p>
+        <p>You don't  have an account ? <a onClick={() => navigate("/register")}className="register-link">Register</a></p>
         </div>
     </div>
   )

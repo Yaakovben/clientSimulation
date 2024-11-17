@@ -17,7 +17,7 @@ export default function AttackFire() {
       socket.emit("attackFire")
     }
     return (
-    <div>
+    <div className='attackFire'>
       {user?.ammuntion.map((ammuntion:any, index:number)=><p key={index} onClick={handel}>{ammuntion.name}</p>)} 
     </div>
   )}
