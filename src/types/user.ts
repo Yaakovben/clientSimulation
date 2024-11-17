@@ -1,5 +1,10 @@
+export interface IAmmuntion{
+    name:string, 
+    amount:number
+}
+
 export interface IUser{
-    ammuntion: any
+    ammuntion: [IAmmuntion]
     _id:string
     username:string
     password:string

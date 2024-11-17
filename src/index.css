@@ -43,7 +43,7 @@
     color: blue;
     text-decoration: underline;
   }
-  .attackFire{
+  .ammuntinAttack{
     display: flex;
     gap: 15px;
     color:red;
