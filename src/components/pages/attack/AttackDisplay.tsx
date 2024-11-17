@@ -5,12 +5,17 @@ import { IMissileList } from '../../../types/user'
 export default function AttackDisplay() {
   
   const [missileList, setMissileList] = useState<IMissileList[]>([]); 
-
   useEffect(() => {
-    socket.on("listMissiles", (MissileList) => {
-      setMissileList(MissileList);
+    socket.emit("start")
+    socket.on("listMissiles", (missilies:IMissileList[]) => {
+      setMissileList(missilies);
     });
-  }, [missileList]);
+  }, []);
+
+  useEffect(()=>{
+    socket.on("updatelistMissiles", (missilies:IMissileList[]) => {
+      setMissileList(missilies);
+  })},[missileList])
 
   return (
     <div>

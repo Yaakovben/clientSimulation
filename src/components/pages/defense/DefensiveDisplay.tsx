@@ -15,7 +15,6 @@ export default function DefensiveDisplay() {
   const HandelIntercepted = (missileLocation:string,missileName:string,userName:any)=>{
     socket.emit("defensiveFire",missileLocation,missileName,userName)
   }
-  
   return (
     <div>
       <table className='table'>
