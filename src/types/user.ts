@@ -11,3 +11,11 @@ export interface IUser{
     organition:string
     location?:string
 }
+
+
+export interface IMissileList  {
+    name:string
+    location:string
+    time:number
+    status?:string
+}
