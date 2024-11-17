@@ -48,5 +48,32 @@
     gap: 15px;
     color:red;
   }
+
+
+
+
+  table{
+    width: 98%;
+    background-color: white;
+    text-align: center;
+    border-radius: 8px;
+    border: 10px solid blue;
+  }
+  .theadTable{
+    padding: 5px;
+    background-color: rgb(36, 97, 212);
+  }
+
+  thead tr th{
+    padding: 5px;
+    border-bottom: 4px solid white;
+  }
+  table tr{
+    background-color: cornflowerblue;
+  }
+
+  table tr td {
+    padding: 3px;
+  }
   
   

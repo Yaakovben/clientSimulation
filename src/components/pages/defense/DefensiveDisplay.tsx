@@ -23,6 +23,7 @@ export default function DefensiveDisplay() {
             <th>Name</th>
             <th>Time</th>
             <th>Status</th>
+            <th>intercepted</th>
           </tr>
         </thead>
         <tbody>

@@ -10,12 +10,13 @@ export default function AttackDisplay() {
     socket.on("listMissiles", (missilies:IMissileList[]) => {
       setMissileList(missilies);
     });
-  }, []);
+  }, [missileList]);
 
   useEffect(()=>{
     socket.on("updatelistMissiles", (missilies:IMissileList[]) => {
       setMissileList(missilies);
   })},[missileList])
+
 
   return (
     <div>

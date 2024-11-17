@@ -13,7 +13,6 @@ export default function AttackFire() {
       navigate('/login')
     } 
   },[user])
-  useEffect(()=>{},[area])
   if(user && user.ammuntion.length >0 ){
     const handel = (missileName:string,locationMissile:string,userName:string)=>{
       socket.emit("attackFire",missileName,locationMissile,userName)

@@ -27,5 +27,4 @@ export default function DefensiveFire() {
     <p>❌No Ammuntion ❌</p>
     )
   }
- 
 }
