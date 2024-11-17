@@ -18,7 +18,8 @@ export default function DefensiveFire() {
     }
     return (
     <div className='defnesiveFire'>
-      {user?.ammuntion.map((ammuntion:any, index:number)=><p key={index} onClick={handel}>{ammuntion.name}</p>)} 
+      <h1>Organition: {user.organition}</h1>
+      {user?.ammuntion.map((ammuntion:any, index:number)=><p key={index} onClick={handel}>{ammuntion.name} ✖️ {ammuntion.amount}</p>)} 
     </div>
   )}
   else{
