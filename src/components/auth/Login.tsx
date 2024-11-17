@@ -11,20 +11,20 @@ export default function Login() {
     const {user} = useAppSelector(state=>state.user)
     const navigate = useNavigate()
 
-    useEffect(()=>{
-      if(!user?._id ) return
-      if (user.organition=="IDF - South") {
-        navigate("/defense")
-      }else{
-        navigate("/atteck")
+    useEffect(() => {
+      if (!user?._id) return;
+      if (user.organition === "IDF - South" || user.organition=="IDF - West Bank" || user.organition=="IDF - Center" || user.organition=="IDF - North") {
+        navigate("/defense");
+      } else {
+        navigate("/atteck");
       }
-    },[user])
-
-    useEffect(()=>{
-      if(user?._id){
-        navigate('/atteck')
-      }
-    },[])
+    }, [user]);
+    
+    // useEffect(()=>{
+    //   if(user?._id){
+    //     navigate('/atteck')
+    //   }
+    // },[])
   return (
     <div className='login'>
       <div className='login-form'>
