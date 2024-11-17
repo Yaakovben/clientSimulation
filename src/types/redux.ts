@@ -7,7 +7,6 @@ export enum DataStatus{
     IDLE = "IDLE"
 }
 
-
 export interface userState {
     error:string|null,
     status:DataStatus,

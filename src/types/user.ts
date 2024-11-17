@@ -12,7 +12,6 @@ export interface IUser{
     location?:string
 }
 
-
 export interface IMissileList  {
     name:string
     location:string

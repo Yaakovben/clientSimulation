@@ -7,7 +7,7 @@ export default function DefensiveDisplay() {
   const user = useAppSelector(state=>state.user.user)
   const [missileList, setMissileList] = useState<IMissileList[]>([]); 
   useEffect(() => {
-    socket.emit("start")
+    socket.emit("startDefensive",user?.organition)
     socket.on("listMissiles", (missilies:IMissileList[]) => {
       setMissileList(missilies);
     });
