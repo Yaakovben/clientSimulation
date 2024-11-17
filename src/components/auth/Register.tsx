@@ -9,7 +9,7 @@ export default function Register() {
   const { user } = useAppSelector((state) => state.user);
   const [username,setUserName] = useState("")
   const [password,setPassword] = useState("")
-  const [location,setLocation] = useState("")
+  // const [location,setLocation] = useState("")
   const [organition,setOrgantion] = useState("")
   const [selectionArea, setselectionArea] = useState(false);
   const navigate = useNavigate();
@@ -22,7 +22,7 @@ export default function Register() {
 
   const handleRegister  = async()=>{
     console.log("879");
-    const register = await dispatch(fetchRegister({username,password,organition,location}))
+    const register = await dispatch(fetchRegister({username,password,organition}))
     console.log("100");
     if (register.payload && register.payload._id){
     navigate("/login")
@@ -59,8 +59,8 @@ const handelShowArea = (select:string)=>{
         <option value="Houthis">Houthis</option>
     </select>
     {selectionArea&&
-    <select value={location} onChange={(e)=>setLocation(e.target.value)}>
-        <option value=""  disabled hidden>Choose area</option>
+    <select value={organition} onChange={(e)=>setOrgantion(e.target.value)}>
+        <option value=""  hidden>Coose Area</option>
         <option value="IDF - North">IDF - North</option>
         <option value="IDF - South">IDF - South</option>
         <option value="IDF - Center">IDF - Center</option>
